@@ -7,8 +7,8 @@ function parseCount(string) {
        
 function validateCount(string) {
     try {
-      const numberOfPurchases2 = parseCount(string);
-      return numberOfPurchases2
+      return parseCount(string);
+       
      } catch (err) {
       return err;
     }
@@ -21,9 +21,9 @@ function validateCount(string) {
       this.c = c;
 
       if (
-        this.a + this.b < this.c ||
-        this.b + this.c < this.a ||
-        this.a + this.c < this.b
+        a + b < c ||
+        b + c < a ||
+        a + c < b
       ) {
         throw new Error("Треугольник с такими сторонами не существует");
       } 
