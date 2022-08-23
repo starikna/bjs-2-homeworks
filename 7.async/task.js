@@ -26,9 +26,7 @@ class AlarmClock {
 
         if (lengthArr1 === lengthArr2) {
             return 0;
-        }
-
-        if (lengthArr1 !== lengthArr2) {
+        } else {
             return 1;
         }
       }
@@ -39,7 +37,14 @@ class AlarmClock {
 
       start() {
         if (id) {
-            return 
+            return id
+        } else {
+            const intervalID = this.alarmCollection.setInterval(myCallback, 1000);
+
+function myCallback() {
+  this.alarmCollection.forEach(this.time => time 
+  );
+}
         }
       }
 }
