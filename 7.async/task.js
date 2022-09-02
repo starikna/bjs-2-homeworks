@@ -5,46 +5,57 @@ class AlarmClock {
     }
 
     addClock(time, callback, id) {
+
         if(!id) {
             throw new Error('Такого будильника еще нет');
         }
+        
+        const lengthArr = this.alarmCollection.length
 
-        if (this.alarmCollection.includes(id)) {
+        if (this.alarmCollection.some((lengthArr) => lengthArr = id)) {
+       
             console.error('Такой звонок уже есть');
-        }    
+        } else {    
             this.alarmCollection.push({id, time, callback});
+        }
     }
 
    removeClock(id) {
-    let lengthArr1 = this.alarmCollection.length
 
-        if(this.id === id) {
-            this.alarmCollection.splice(this.alarmCollection[id], 1)
-        }
+    const lengthArr1 = this.alarmCollection.length
 
-        let lengthArr2 = this.alarmCollection.length
+   const alarmCollection2 = this.alarmCollection.filter ((id) => id !== this.id) 
 
-        if (lengthArr1 === lengthArr2) {
-            return 0;
+        const lengthArr2 = alarmCollection2.length
+
+        if (lengthArr1 !== lengthArr2) {
+            return true;
         } else {
-            return 1;
+            return false;
         }
-      }
+    }
 
       getCurrentFormattedTime(time) {
-        return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); 
       }
 
       start() {
-        if (id) {
-            return id
-        } else {
-            const intervalID = this.alarmCollection.setInterval(myCallback, 1000);
-
-function myCallback() {
-  this.alarmCollection.forEach(this.time => time 
-  );
+function checkClock(timerId) {
+    if(time === new Date) {
+        
+    }
 }
-        }
       }
-}
+
+      stop() {
+
+      }
+
+      printAlarms() {
+
+      }
+
+      clearAlarms() {
+
+      }
+    }
